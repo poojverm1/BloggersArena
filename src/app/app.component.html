@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-12">
+      <h4 class="header" style="background-color: brown;height:51%;padding:2%;text-align:center;color:white">{{title}}</h4>
+      <hr>
+      <ul class="nav nav-pills">
+        <li class="active"><a [routerLink]="['/home']">Home</a></li>
+        <li><a [routerLink]="['/about']">About</a></li>
+        <li><a [routerLink]="['/create']">Post A blog</a></li>
+        
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+  
+      
+      
+     
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>
