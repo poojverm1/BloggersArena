@@ -3,10 +3,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {ActivatedRoute,Router} from "@angular/router";
 import { BlogService } from '../blog.service';
 import { BlogHttpService } from '../blog-http.service';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-blog-view',
   templateUrl: './blog-view.component.html',
   styleUrls: ['./blog-view.component.css'],
+  providers: [Location]
   
 })
 export class BlogViewComponent implements OnInit,OnDestroy{
@@ -14,7 +16,8 @@ export class BlogViewComponent implements OnInit,OnDestroy{
   public currentBlog;
   
 
-  constructor(private _route:ActivatedRoute,private router:Router,public blogHttpService:BlogHttpService) {
+  constructor(private _route:ActivatedRoute,private router:Router,public blogHttpService:BlogHttpService,
+  private _location:Location) {
 console.log("constructor is called");
    }
 
@@ -61,6 +64,10 @@ console.log("constructor is called");
         alert("not deletd");
       }
     )
+  }
+
+  public goBackToPreviousPage():any{
+    this._location.back();
   }
 
  

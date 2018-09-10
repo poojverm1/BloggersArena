@@ -17,13 +17,13 @@
 <hr>
 <div class="row" *ngIf=currentBlog>
   <div class="col-md-4">
-    <a class="btn btn-primary [routerLink]=['/edit',currentBlog.blogId]">Edit</a>
+    <a class="btn btn-primary" [routerLink]="['/edit',currentBlog.blogId]">Edit</a>
   </div>
   <div class="col-md-4">
     <a class="btn btn-danger" (click)="deleteThisBlog()">Delete</a>
   </div>
   <div class="col-md-4">
-    <a class="btn btn-warning">Go back</a>
+    <a class="btn btn-warning"  (click)="goBackToPreviousPage()">Go back</a>
   </div>
 
 </div>
